@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="css/styles.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,18 +12,22 @@
     Icon Site - heroicons, fontawesome
     -->
 
-    <div id="status-bar">
-      <div class="status-bat__column">
+    <div class="status-bar">
+      <div class="status-bar__column">
         <span>No Service</span>
-        <i class="fas fa-wifi"></i>
+        <i class="fa-solid fa-wifi"></i>
       </div>
-      <div class="status-bat__column">
+      <div class="status-bar__column">
         <span>18:43</span>
       </div>
-      <div class="status-bat__column">
+      <div class="status-bar__column">
         <span>110%</span>
-        <i class="fas fa-battery-full"></i>
-        <i class="fas fa-bolt"></i>
+        <i class="fa-solid fa-battery-three-quarters"></i>
+        <!--
+          <i class="fas fa-battery-full fa-2x"></i>
+          fa-2x: fontawesome를 통해서 크기 선택 및 조절도 가능
+        -->
+        <i class="fa-solid fa-bolt"></i>
       </div>
     </div>
 
@@ -33,9 +38,19 @@
       </p>
     </header>
 
-    <form id="login-form">
-      <input type="text" placeholder="Email or phone number" />
-      <input type="password" placeholder="Password" />
+    <!--
+      action은 어떤 페이지로 data를 보낼건지 지정
+      method는 2가지 방식 중 하나를 쓸 수 있음.
+      (POST: data를 서버로 보내고 싶을때 
+      / GET: 보안취약, URL에 포함되어도 상관없는 정보들을 GET방식으로 보냄.(username이랑 password를 GET방식으로 보내면 안됨))
+      해당 방식에 대해 좀 더 알아보고 싶다면 "[풀스택]유튜브 클론 코딩" 듣기
+      프로젝트 업로드를 위함이라면 GET를 택함
+
+      require가 필요하다고 생각하면 required 써주기
+    -->
+    <form action="friends.html" method="get" id="login-form">
+      <input name="username" type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="Password" />
       <input type="submit" value="Log In" />
       <!-- or <button></button> -->
       <a href="#">Find Kokoa Account or Password</a>
@@ -43,7 +58,7 @@
 
     <!-- script는 항상 마지막에 있어야함 -->
     <script
-      src="https://kit.fontawesome.com/6478f529f2.js"
+      src="https://kit.fontawesome.com/4b702b205a.js"
       crossorigin="anonymous"
     ></script>
   </body>
